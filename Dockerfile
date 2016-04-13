@@ -9,4 +9,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
 
+VOLUME /mnt
+
 ENTRYPOINT ["mount", "-t nfs", "-o nolock", "192.168.1.234:/btsync", "/mnt"]
