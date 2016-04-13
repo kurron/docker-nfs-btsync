@@ -1,10 +1,10 @@
-consul:
-    build: .
-    net: "host"
-    volumes:
-        - /home/vagrant:/home/developer
-        - .:/pwd
-    user: 1000:1000
-    stdin_open: true
-    tty: true
-    command: --version
+version: '2'
+services:
+    nfs:
+        build: .
+        network_mode: "host"
+        ipc: "host"
+        privileged: true
+        stdin_open: true
+        tty: true
+        command: /bin/bash 
