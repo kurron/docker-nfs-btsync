@@ -11,4 +11,4 @@ RUN apt-get update && \
 
 VOLUME /mnt
 
-ENTRYPOINT ["mount", "-t nfs", "-o nolock", "192.168.1.234:/btsync", "/mnt"]
+ENTRYPOINT ["mount", "-t nfs", "-o nolock", "192.168.1.250:/btsync", "/mnt"]
