@@ -2,6 +2,7 @@ version: '2'
 services:
     nfs:
         build: .
+        container_name: "nfs"
         network_mode: "host"
         ipc: "host"
         privileged: true

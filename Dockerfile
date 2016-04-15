@@ -11,4 +11,10 @@ RUN apt-get update && \
 
 VOLUME /mnt
 
-ENTRYPOINT ["mount", "-t", "nfs", "-o", "nolock", "192.168.1.234:/btsync", "/mnt"]
+ENV OPTIONS nolock
+ENV SERVER 192.168.1.234
+ENV MOUNT /btsync
+
+ADD mount.sh /mount.sh
+
+ENTRYPOINT ["/mount.sh"]
